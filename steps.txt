@@ -1,0 +1,63 @@
+steps creating CRUD-PHP
+
+1 => create database and tables.
+2 => insert data for testing.
+3 => connect database server using code editor, use PDO method (config folder).
+4 => create home page, tables for inputs
+5 => import bootstrap and CSS to style a page 
+6 => creat dynamic header and footer (eg.. cut from top to the begining of first container)
+7 => include also the config and now we can fetch data form database and replace the static data 
+8 => in index.php put query => tbody section, use for each to show all records
+9=> continuing in table header i created bootstrap class, put button to right usng some css styles
+10=>continuing in table header, in add students btn - i use MODAL to popup form and put it above footer
+11=> inside modal body i created form and style it(form-group), for user inputs
+12=> move the form tag from the top and end tag form of MODAL to cater all modal too
+13=> change button add to input type= submit value = Add
+14=> create insert.php file inside folder of crud-php
+15=> back at index.php inside the form tag, top of modal put action and method atribute, action = "" method ="post"
+16=> in insert.php create php that check if the data is submited - use superglobal $_POST and extract the data 
+17 => continuing from insert.php put all input name like this - $f_name = $_POST["f_name"];
+18 => continuing from insert.php - create validation wheter data is inserted or not like empty and relocated it in index.php with message error! if empty input.
+19=> in index.php create h6 tag to output the error message in the top of modal form
+20 => back at isert.php put else to insert data to a database and execute it.
+21 =>continuing from insert.php - add validation if query is failed or not, if inserted add if to check if current data is affected and add else to die query.
+22 =>in index.php add update and delete column and on the body part add update and delete button
+23=> in href inside td of update/delete put file name like -update_page_1.php and on delete too
+24=> continuing - on modal 2 convert it the save changes button to <a> tag
+ 
+//IMPLEMENTING JQUERY to load data to Modal
+25=> in update button on header put data-id to embed custom data attributes on all html elements
+26=> continuing - add data-role HTML data attribute to access this element in jquery.
+27=> below </body> put JS script for Jqueryfunction,to access anchor element, inside on click at 'a' element put the data-role value like this - 'a[data-role=update]'
+28=> for checking only = continuing create other , function to alert id by clicking on Update link stored in data-id attribute like this - alert($(this).data('id'));
+29=> now if that work - open modal and append user information in modal input fields by clicking update a link
+30=> in <tr> make this to '<tr id="row_' . $user->id . '">' ; as each id of update url and table row has now unique id which will help us to select user information with help of this id in tr
+31=> continuing in each column add more data attributes -data target
+32=> now back at Jquery script add more details..fname to gender to save it in variables
+33=> now that information is saved in variables. append these values like:$('#f_name').val(f_name);
+ in input fields to appear it in modal form with toggle modal : $('#modal2').modal('show');
+
+//saving EDITED DATA TO DATABASE with AJAX
+34=> continuing - Now create an event to get data from fields and update in the database
+35=> on index.php in modal2 below gender put input set it to hidden set id to userId
+36=> back at script.js put additional append in userId input element above modal show
+37=> continuing in click event assign the userId to gender and save each in variable
+
+//AJAX
+38=> now create ajax to retrieve the data 
+39=> go to update_page_1.php create code to recieve user data from AJAX and update it in database
+40=> when saving it successfully- now update this information in table
+41=> in ajax success, inside function , update record in table
+
+
+
+
+
+
+
+
+
+
+
+
+
